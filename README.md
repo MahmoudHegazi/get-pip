@@ -66,6 +66,7 @@ An example of a competitor is pipreqs, which lacks the flexibility and dynamic c
 ![image](https://github.com/user-attachments/assets/1fac617a-a1ae-41d9-9955-a51442c83a95)
 
 # How to Install get-pip.deb
+```bash cd ~/get-pip && git pull origin main && cp get-pip.deb ~/```
 Since your build was successful, you now need to install the .deb package on your system.
 
 Install Manually with dpkg
