@@ -1,0 +1,47 @@
+name: Build Debian Package for git-pip
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Debian package structure
+        run: |
+          mkdir -p git-pip/DEBIAN
+          mkdir -p git-pip/usr/local/bin
+          
+          # Copy your script
+          cp user/local/bin/get-pip.sh git-pip/usr/local/bin/get-pip
+
+          # Make script executable
+          chmod +x git-pip/usr/local/bin/get-pip
+
+          # Create DEBIAN control file
+          cat <<EOF > git-pip/DEBIAN/control
+          Package: git-pip
+          Version: 1.0
+          Section: utils
+          Priority: optional
+          Architecture: all
+          Maintainer: python_king <mahmod.hagzy@gmail.com>
+          Description: A dynamic alternative to pip freeze for managing dependencies efficiently across systems.
+          EOF and boyend wait php and node.js packages and relative loader bring web-pack to the cli
+          linux apt host dynamic apps check github for more info: https://github.com/MahmoudHegazi/get-pip thanks for using get-pip.
+
+      - name: Build Debian package
+        run: |
+          dpkg-deb --build git-pip git-pip.deb
+
+      - name: Upload Debian package
+        uses: actions/upload-artifact@v3
+        with:
+          name: git-pip-deb
+          path: ./git-pip.deb
