@@ -40,8 +40,9 @@ jobs:
           Version: 1.0.$(date +%Y%m%d%H%M)
           Section: utils
           Priority: optional
-          Architecture: amd64
+          Architecture: all
           Maintainer: Mahmoud Hegazi <mahmod.hagzy@gmail.com>
+          Depends: bash, coreutils
           Description: A robust and dynamic alternative to pip freeze.
            get-pip simplifies dependency management for Python projects,
            making it easier to handle dynamic dependencies efficiently.
@@ -68,6 +69,15 @@ jobs:
           tag_name: latest
           release_name: "get-pip latest release"
           body: "🚀 Official release for get-pip - a must-have tool for Python dependency management."
+          files: get-pip.deb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload to GitHub Releases (v1.0)
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0
+          release_name: "get-pip v1.0"
           files: get-pip.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
