@@ -26,12 +26,8 @@ jobs:
 
       - name: Copy Script
         run: |
-          if [ -f usr/local/bin/get-pip.sh ]; then
-            cp usr/local/bin/get-pip.sh get-pip/usr/local/bin/get-pip
-            chmod +x get-pip/usr/local/bin/get-pip
-          else
-            echo "Error: get-pip.sh not found!" && exit 1
-          fi
+          cp get-pip.sh get-pip/usr/local/bin/get-pip
+          chmod +x get-pip/usr/local/bin/get-pip
 
       - name: Create DEBIAN Control File
         run: |
