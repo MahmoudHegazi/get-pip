@@ -17,6 +17,9 @@ git reset --hard origin/main && \
 git pull origin main && \
 cp get-pip.deb ~/
 ```
+```
+cd ~/get-pip && git remote set-url origin https://github.com/MahmoudHegazi/get-pip && git fetch origin && git reset --hard origin/main && git pull origin main && [ ! -f ~/get-pip.deb ] && cp ../get-pip.deb ~/```
+```
 ## ChatGPT rating to pip-imports 
 u may see in image chagtgpt take alot time (45seconds) for process and be honest and accurate about get-pip as it big so this result reliable, usally was take max 8seconds.
 
