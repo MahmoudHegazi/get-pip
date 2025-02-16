@@ -4,12 +4,8 @@ We can also call this get_required_imports. As the name suggests, it dynamically
 
 An example of a competitor is pipreqs, which lacks the flexibility and dynamic capabilities of get_imports.
 
-### chatgpt opinion (v1_day_invented_chatgpt_recored)
-
-![image](https://github.com/user-attachments/assets/7f136517-c338-4370-8085-53ac01741860)
-
-![image](https://github.com/user-attachments/assets/38e8db67-d669-4253-b880-a65d9b8127b2)
-
+### chatgpt review:
+![image](https://github.com/user-attachments/assets/1fac617a-a1ae-41d9-9955-a51442c83a95)
 
 Also this tool can help newbie/pro who doesn't have requirements.txt and wants to host their application on a new server.
 
