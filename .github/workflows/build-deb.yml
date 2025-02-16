@@ -1,10 +1,10 @@
-name: Build and Release Debian Package for git-pip
+name: Build and Publish get-pip Debian Package
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,47 +14,60 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Debian package structure
+      - name: Install Dependencies
         run: |
-          mkdir -p git-pip/DEBIAN
-          mkdir -p git-pip/usr/local/bin
-          
-          # Copy the script
-          cp user/local/bin/get-pip.sh git-pip/usr/local/bin/get-pip
+          sudo apt update
+          sudo apt install -y dpkg-dev gh
 
-          # Make script executable
-          chmod +x git-pip/usr/local/bin/get-pip
+      - name: Create Debian Package Structure
+        run: |
+          mkdir -p get-pip/DEBIAN
+          mkdir -p get-pip/usr/local/bin
 
-          # Create DEBIAN control file
-          cat <<EOF > git-pip/DEBIAN/control
-          Package: git-pip
+      - name: Copy Script
+        run: |
+          if [ -f get-pip.sh ]; then
+            cp get-pip.sh get-pip/usr/local/bin/get-pip
+            chmod +x get-pip/usr/local/bin/get-pip
+          else
+            echo "Error: get-pip.sh not found!" && exit 1
+          fi
+
+      - name: Create DEBIAN Control File
+        run: |
+          cat <<EOF > get-pip/DEBIAN/control
+          Package: get-pip
           Version: 1.0.$(date +%Y%m%d%H%M)
           Section: utils
           Priority: optional
-          Architecture: all
-          Maintainer: python_king <mahmod.hagzy@gmail.com>
-          Description: A dynamic alternative to pip freeze for managing dependencies efficiently across systems.
+          Architecture: amd64
+          Maintainer: Mahmoud Hegazi <mahmod.hagzy@gmail.com>
+          Description: A robust and dynamic alternative to pip freeze.
+           get-pip simplifies dependency management for Python projects,
+           making it easier to handle dynamic dependencies efficiently.
+           It allows developers to quickly snapshot, export, and restore
+           dependencies without strict version locking, ensuring smooth
+           transitions across different environments.
           EOF
 
-      - name: Build Debian package
-        run: |
-          dpkg-deb --build git-pip git-pip.deb
+      - name: Build Debian Package
+        run: dpkg-deb --build get-pip get-pip.deb
 
-      - name: Delete old GitHub release & tag (if exists)
+      - name: Delete Old GitHub Release & Tag (if exists)
         continue-on-error: true
         run: |
           TAG_NAME="latest"
           gh release delete $TAG_NAME --yes || true
           gh tag delete $TAG_NAME || true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release & Upload Debian Package
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          release_name: "git-pip latest release"
-          body: "🚀 Automatically generated release for git-pip."
-          files: git-pip.deb
+          release_name: "get-pip latest release"
+          body: "🚀 Official release for get-pip - a must-have tool for Python dependency management."
+          files: get-pip.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
