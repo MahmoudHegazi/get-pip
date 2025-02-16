@@ -1,4 +1,4 @@
-name: Build Debian Package for git-pip
+name: Build and Release Debian Package for git-pip
 
 on:
   push:
@@ -27,21 +27,32 @@ jobs:
           # Create DEBIAN control file
           cat <<EOF > git-pip/DEBIAN/control
           Package: git-pip
-          Version: 1.0
+          Version: 1.0.$(date +%Y%m%d%H%M)
           Section: utils
           Priority: optional
           Architecture: all
           Maintainer: python_king <mahmod.hagzy@gmail.com>
           Description: A dynamic alternative to pip freeze for managing dependencies efficiently across systems.
-          EOF and boyend wait php and node.js packages and relative loader bring web-pack to the cli
-          linux apt host dynamic apps check github for more info: https://github.com/MahmoudHegazi/get-pip thanks for using get-pip.
+          EOF
 
       - name: Build Debian package
         run: |
           dpkg-deb --build git-pip git-pip.deb
 
-      - name: Upload Debian package
-        uses: actions/upload-artifact@v3
+      - name: Delete old GitHub release & tag (if exists)
+        run: |
+          TAG_NAME="latest"
+          gh release delete $TAG_NAME --yes || true
+          gh tag delete $TAG_NAME || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release & Upload Debian Package
+        uses: softprops/action-gh-release@v1
         with:
-          name: git-pip-deb
-          path: ./git-pip.deb
+          tag_name: latest
+          release_name: "git-pip latest release"
+          body: "Automatically generated release for git-pip."
+          files: git-pip.deb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
