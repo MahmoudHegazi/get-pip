@@ -1,4 +1,4 @@
-Package: get-pip-cli
+Package: get-pip
 Version: 1.0
 Section: utils
 Priority: optional
