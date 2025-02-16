@@ -1,7 +1,7 @@
 echo -e "\e[34m|------------------------------------------------------------------------|"
 echo -e "\e[36m|\e[32m                  Welcome Thanks For Using Get PIP                  \e[36m|\e[34m"
 echo -e "|------------------------------------------------------------------------|\e[0m"
-
+echo "hello new updates relased"
 
 # handle inputs togther as it simple input html input "your input"
 function input() {
