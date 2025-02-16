@@ -67,7 +67,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          release_name: "get-pip latest release"
+          name: "get-pip latest release"
           body: "🚀 Official release for get-pip - a must-have tool for Python dependency management."
           files: get-pip.deb
         env:
@@ -77,7 +77,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v1.0
-          release_name: "get-pip v1.0"
+          name: "get-pip v1.0"
           files: get-pip.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
