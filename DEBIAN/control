@@ -6,4 +6,4 @@ Architecture: all
 Maintainer: Python_King <mahmod.hagzy@gmail.com>
 Description: A CLI tool for dynamically detecting and managing missing pip imports.
 This tool scans your Python files for missing pip modules and helps generate a requirements list
-read https://github.com/MahmoudHegazi/get-pip for more info.
+ read https://github.com/MahmoudHegazi/get-pip for more info.
