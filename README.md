@@ -10,6 +10,9 @@ but here advanced approches as (it made to forget about devices used and os and 
 ### How To in GitBash windows
 if u downloaded the get-pip.deb file in ~ dir for example the code to get the future updates of the package done by github this repo run this command in gitbash
 ```
+"/c/Program Files/7-Zip/7z.exe" x get-pip/data.tar -o"get-pip"
+```
+```
 cd ~/get-pip && \
 git remote set-url origin https://github.com/MahmoudHegazi/get-pip && \
 git fetch origin && \
