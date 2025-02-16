@@ -61,7 +61,7 @@ jobs:
           gh release delete $TAG_NAME --yes || true
           gh tag delete $TAG_NAME || true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
       - name: Create GitHub Release & Upload Debian Package
         uses: softprops/action-gh-release@v1
@@ -71,7 +71,7 @@ jobs:
           body: "🚀 Official release for get-pip - a must-have tool for Python dependency management."
           files: get-pip.deb
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
       - name: Upload to GitHub Releases (v1.0)
         uses: softprops/action-gh-release@v1
@@ -80,4 +80,4 @@ jobs:
           name: "get-pip v1.0"
           files: get-pip.deb
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
