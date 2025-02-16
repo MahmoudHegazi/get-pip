@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Debian package structure
@@ -18,7 +19,7 @@ jobs:
           mkdir -p git-pip/DEBIAN
           mkdir -p git-pip/usr/local/bin
           
-          # Copy your script
+          # Copy the script
           cp user/local/bin/get-pip.sh git-pip/usr/local/bin/get-pip
 
           # Make script executable
@@ -40,6 +41,7 @@ jobs:
           dpkg-deb --build git-pip git-pip.deb
 
       - name: Delete old GitHub release & tag (if exists)
+        continue-on-error: true
         run: |
           TAG_NAME="latest"
           gh release delete $TAG_NAME --yes || true
@@ -52,7 +54,7 @@ jobs:
         with:
           tag_name: latest
           release_name: "git-pip latest release"
-          body: "Automatically generated release for git-pip."
+          body: "🚀 Automatically generated release for git-pip."
           files: git-pip.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
