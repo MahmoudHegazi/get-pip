@@ -1,0 +1,8 @@
+Package: get-pip-cli
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Python_King mahmod.hagzy@gmail.com
+Description: A CLI tool for dynamically detecting and managing missing pip imports.
+This tool scans your Python files for missing pip modules and helps generate a requirements list.
