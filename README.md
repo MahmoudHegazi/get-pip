@@ -68,6 +68,7 @@ An example of a competitor is pipreqs, which lacks the flexibility and dynamic c
 # How to Install get-pip.deb GitBASH
 ```bash cd ~/get-pip && git pull origin main && cp get-pip.deb ~/```
 ```cd ~/get-pip && git pull origin main && cp get-pip.deb ~/```
+```cd ~/get-pip && git remote set-url origin https://github.com/MahmoudHegazi/get-pip && git pull origin main --allow-unrelated-histories && cp get-pip.deb ~/```
 
 Since your build was successful, you now need to install the .deb package on your system.
 
