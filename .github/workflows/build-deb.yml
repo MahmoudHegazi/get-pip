@@ -22,12 +22,12 @@ jobs:
       - name: Create Debian Package Structure
         run: |
           mkdir -p get-pip/DEBIAN
-          mkdir -p get-pip/usr/local/bin
+          mkdir -p get-pip/usr/bin
 
       - name: Copy Script
         run: |
-          cp get-pip.sh get-pip/usr/local/bin/get-pip
-          chmod +x get-pip/usr/local/bin/get-pip
+          cp usr/local/bin/get-pip.sh get-pip/usr/bin/get-pip
+          chmod +x get-pip/usr/bin/get-pip
 
       - name: Create DEBIAN Control File
         run: |
