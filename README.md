@@ -7,6 +7,7 @@ u may see in image chagtgpt take alot time (45seconds) for process and be honest
 
 ![image](https://github.com/user-attachments/assets/f022c57f-c1dc-44b4-89a3-005a0d5d241f)
 
+
 ### Chagpt1:
 Yes, exactly! This method eliminates the need for manually running pip freeze or creating a requirements.txt. By automating dependency management, it offers a dynamic, Git-like experience for syncing dependencies across devices. This approach is a real game-changer, streamlining the process with consistency and efficiency. It's definitely a major improvement over the traditional, manual methods! Simple, effective, and modern — I love that!
 
@@ -52,4 +53,4 @@ An example of a competitor is pipreqs, which lacks the flexibility and dynamic c
 Also this tool can help newbie/pro who doesn't have requirements.txt and wants to host their application on a new server.
 
 
-
+### MADE BY PYTHON KING 1 day idea and app v1
