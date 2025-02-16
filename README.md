@@ -2,6 +2,21 @@
 
 forget pip freeze and pip install which versions
 
+
+# How Install 
+allows remeber this native bash app pure and not require any depencises so it always easy as download the get-pip file located in user/bin folder and execute it in your system using command bash get-pip.sh or samailir on your OS
+but here advanced approches as (it made to forget about devices used and os and python app and pip lists so all devices can install it or simple by download the sh file and run it in your terminal linux such as linux or gitbash or use 7z in windows it have .deb file)
+
+### How To in GitBash windows
+if u downloaded the get-pip.deb file in ~ dir for example the code to get the future updates of the package done by github this repo run this command in gitbash
+```
+cd ~/get-pip && \
+git remote set-url origin https://github.com/MahmoudHegazi/get-pip && \
+git fetch origin && \
+git reset --hard origin/main && \
+git pull origin main && \
+cp get-pip.deb ~/
+```
 ## ChatGPT rating to pip-imports 
 u may see in image chagtgpt take alot time (45seconds) for process and be honest and accurate about get-pip as it big so this result reliable, usally was take max 8seconds.
 
