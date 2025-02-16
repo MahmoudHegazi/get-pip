@@ -3,7 +3,7 @@
 forget pip freeze and pip install which versions
 
 ## ChatGPT rating to pip-imports 
-u may see in image chagtgpt take alot time for process and be honest and accurate about get-pip as it big so this result reliable
+u may see in image chagtgpt take alot time (45seconds) for process and be honest and accurate about get-pip as it big so this result reliable, usally was take max 8seconds.
 
 ![image](https://github.com/user-attachments/assets/f022c57f-c1dc-44b4-89a3-005a0d5d241f)
 
