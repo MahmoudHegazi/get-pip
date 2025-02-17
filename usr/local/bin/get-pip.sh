@@ -1,5 +1,5 @@
 echo -e "\e[34m|------------------------------------------------------------------------|"
-echo -e "\e[36m|\e[32m                  Welcome Thanks For Using Get Imports                  \e[36m|\e[34m"
+echo -e "\e[36m|\e[32m                  Welcome Thanks For Using Get PIP                  \e[36m|\e[34m"
 echo -e "|------------------------------------------------------------------------|\e[0m"
 
 dev_loaded_packages=()
