@@ -77,8 +77,8 @@ function main() {
          # now this pip relative package not need pip or target package need pip
          pip_package=$(get_pip_arg "$line")
          if [[ "$pip_package" != '' ]]; then
-             current_loaded_packages+=("$pip_package")
-             echo $pip_package
+            current_loaded_packages+=("$pip_package")
+            echo $pip_package
          fi
       fi
    done
@@ -87,19 +87,19 @@ function main() {
    then
       for package in "${current_loaded_packages[@]}"; do
          #echo pip show "$package" &>/dev/null
-         package_version="$(pip show "$package" | grep -i "^Version:" | awk "{print $2}")"
+         package_version=$(pip show "$package" | grep -i '^Version' | awk '{print $2}')
          if [ -n "$package_version" ]; then
-             current_packages+=("$package ($package_version)")
-             current_required_pip+=("$package==$package_version")
-             echo -e ""$package"=="$package_version""
-             echo -e "\e[34m '$package' installed with version "$package_version" \e[0m"
+            # using command pip generate is handle dynamic os packages ignored or any not exist package
+            current_packages+=("$package ($package_version)")
+            current_required_pip+=("$package"=="$package_version")
+            echo -e "\e[34m '$package' installed with version "$package_version" \e[0m"
          else
-             current_packages+=("$package (0)")
+            current_packages+=("$package (0)")
             echo -e "\e[31mPackage '$package' is not installed.\e[0m"
          fi
       done
       echo 'going to start'
-      pip_install_command="pip install $(IFS=' && '; echo "${current_required_pip[*]}")"
+      pip_install_command="pip install $(IFS=' '; echo "${current_required_pip[*]}")"
       echo -e "\e[32mPIP_____________________PIP"
       echo "$pip_install_command"
       echo "PIP_____________________PIP\e[0"
@@ -114,5 +114,5 @@ main
 
 #all_imports=$(awk -F "$spliter" '{print $1}' "$filepath")
 #all_imports1=$(echo $imports_txt | awk -F "$spliter" '{print $1}')
-#all_imports2=$(echo $imports_txt | sed "s/$spliter.*//")
+#all_imports2=$(echo $imports_txt | sed "s/$spliter.*//") loader friendly
 #all_imports=$(awk '{p=p $0 ORS} index($0, "$pliter") {exit} END {print p}' "$filepath")
