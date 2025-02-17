@@ -1,7 +1,6 @@
 # pip-imports (Your First CLI Tool to Consider) 
 
-# ChatGPT WHY USE GET-PIP:
-Why is get-pip Important?
+# Why get-pip
 ![image](https://github.com/user-attachments/assets/b92b4251-6969-458d-87f3-1072da15336a)
 
 
