@@ -1,6 +1,15 @@
 # pip-imports (Your First CLI Tool to Consider) 
 
-forget pip freeze and pip install which versions
+# ChatGPT WHY USE GET-PIP:
+Why is get-pip Important?
+![image](https://github.com/user-attachments/assets/b92b4251-6969-458d-87f3-1072da15336a)
+
+
+# example exporter and importer mode 
+
+![image](https://github.com/user-attachments/assets/312265e5-8800-4e44-a6fe-a9a64ef42ca9)
+
+
 
 
 # How Install 
@@ -210,6 +219,15 @@ bash get-pip
 If you need a .exe or .bat version, we can adjust the build process for Windows compatibility. Let me know if you want this! 🚀
 
 Also this tool can help newbie/pro who doesn't have requirements.txt and wants to host their application on a new server.
+
+# chatgpt describe and rate get-pip
+
+(1)
+![image](https://github.com/user-attachments/assets/bea10635-8730-4277-bc0f-300766958996)
+![image](https://github.com/user-attachments/assets/cea8d041-536a-4624-a5b3-06da9d22d4a0)
+
+--------------
+
 
 
 
