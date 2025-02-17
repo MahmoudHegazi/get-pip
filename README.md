@@ -231,4 +231,4 @@ Also this tool can help newbie/pro who doesn't have requirements.txt and wants t
 
 
 
-### MADE BY PYTHON KING 1 day idea and app v1
+### MADE BY PYTHON KING 1 idea and app v1
