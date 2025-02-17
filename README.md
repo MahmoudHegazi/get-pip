@@ -1,7 +1,7 @@
 # pip-imports (Your First CLI Tool to Consider) 
 
 # Why get-pip
-![image](https://github.com/user-attachments/assets/b92b4251-6969-458d-87f3-1072da15336a)
+![image](https://github.com/user-attachments/assets/3eef1149-7db0-4a6e-86b4-892cf8135301)
 
 
 # example exporter and importer mode 
