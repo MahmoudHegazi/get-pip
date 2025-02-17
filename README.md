@@ -8,11 +8,4 @@
 
 ![image](https://github.com/user-attachments/assets/312265e5-8800-4e44-a6fe-a9a64ef42ca9)
 
-
-
---------------
-
-
-
-
-### MADE BY PYTHON KING 1 idea and app v1
+# if there module not named as pip can install it (reporter just not broke ur app it just will not install and u need install and will not log the right name and see install error, as no option provided by pip or any other logic to get the name ex import barcode and pip python-barcode so it log even for u and automate the rest 
