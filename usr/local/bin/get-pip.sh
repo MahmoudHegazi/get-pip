@@ -102,7 +102,7 @@ function main() {
       pip_install_command="pip install $(IFS=' '; echo "${current_required_pip[*]}")"
       echo -e "\e[32mPIP_____________________PIP"
       echo "$pip_install_command"
-      echo "PIP_____________________PIP\e[0"
+      echo "PIP_____________________PIP\e[0m"
       echo "Updated current_packages: ${current_packages[@]}"
    else
       echo 'ok will not started ...'
